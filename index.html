@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pokémon offensive type coverage calculator">
+    <title>Pokémon Type Coverage Calculator</title>
+    <link rel="stylesheet" href="./app/css/style.css">
+    <script type="module" src="./app/js/main.js"></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Pokémon Type Coverage Calculator</h1>
+        <p>Find the best offensive matchup against every Pokémon in a game's Pokédex.</p>
+    </header>
+
+    <main>
+        <section class="settings-panel">
+            <div class="setting-group">
+                <label for="game-select">Game</label>
+                <select id="game-select">
+                    <option value="">Loading games...</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <span class="setting-label">Attacking types</span>
+                <p class="setting-description">Select up to four types.</p>
+                <div id="type-selector" class="type-selector">
+                    <p>Loading types...</p>
+                </div>
+                <p id="type-count" class="type-count">0 / 4 selected</p>
+            </div>
+
+            <div class="setting-group mega-setting">
+                <label for="mega-toggle">
+                    <input type="checkbox" id="mega-toggle">
+                    Treat Mega Evolutions separately
+                </label>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="results-header">
+                <h2>Coverage results</h2>
+                <p id="results-summary">Select a game and at least one attacking type.</p>
+            </div>
+
+
+            <section class="coverage-summary">
+                <div class="summary-header">
+                    <div>
+                        <h2>Coverage overview</h2>
+                        <p>Best effectiveness against the selected Pokédex</p>
+                    </div>
+                    <div id="summary-total" class="summary-total"></div>
+                </div>
+                <div id="coverage-summary" class="summary-grid"></div>
+            </section>
+
+
+            <div id="results-container" class="results-container">
+                <p class="empty-state">Your results will appear here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Pokémon data and sprites are sourced from
+            <a href="https://github.com/richi3f/pokemon-team-planner" target="_blank"
+                rel="noopener noreferrer">richi3f/pokemon-team-planner</a>.
+        </p>
+    </footer>
+</body>
+
+</html>

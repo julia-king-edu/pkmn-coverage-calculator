@@ -1,0 +1,393 @@
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242424;
+    background: #f5f6f8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+.page-header {
+    padding: 36px 24px;
+    text-align: center;
+    background: #242b3a;
+    color: #ffffff;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.page-header p {
+    margin: 0;
+    color: #d2d7e0;
+}
+
+main {
+    width: min(1100px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+/* Settings */
+
+.settings-panel {
+    display: grid;
+    gap: 28px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e0e3e8;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+}
+
+.setting-group {
+    display: grid;
+    gap: 10px;
+}
+
+.setting-group > label,
+.setting-label {
+    font-weight: 700;
+}
+
+.setting-description,
+.type-count {
+    margin: 0;
+    color: #697386;
+    font-size: 0.9rem;
+}
+
+#game-select {
+    width: 100%;
+    max-width: 420px;
+    padding: 11px 12px;
+    border: 1px solid #cbd0d9;
+    border-radius: 6px;
+    background: #ffffff;
+    font: inherit;
+}
+
+/* Type selection */
+
+.type-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+}
+
+.type-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3;
+    min-width: 0;
+    padding: 3px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: #eef0f4;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.type-button:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.type-button.selected {
+    opacity: 1;
+    border-color: #202020;
+    box-shadow: 0 0 0 2px #ffffff inset;
+}
+
+.type-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+.type-button img {
+    display: block;
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.mega-setting label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+}
+
+.mega-setting input {
+    width: 17px;
+    height: 17px;
+    accent-color: #455a83;
+}
+
+/* Coverage summary */
+
+.coverage-summary {
+    margin: 28px 0;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e0e3e8;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.summary-header h2 {
+    margin: 0 0 5px;
+    font-size: 1.25rem;
+    color: #242b3a;
+}
+
+.summary-header p {
+    margin: 0;
+    color: #697386;
+    font-size: 0.9rem;
+}
+
+.summary-total {
+    flex-shrink: 0;
+    padding: 8px 13px;
+    border-radius: 7px;
+    background: #eef0f4;
+    color: #455a83;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 0;
+    padding: 15px 5px;
+    border: 1px solid #e8ebf0;
+    border-radius: 9px;
+    background: #f8f9fb;
+}
+
+.summary-value {
+    color: #242b3a;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.summary-label {
+    color: #697386;
+    font-size: 0.72rem;
+    text-align: center;
+}
+
+.summary-count {
+    margin-top: 3px;
+    color: #455a83;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Results */
+
+.results-section {
+    margin-top: 32px;
+}
+
+.results-header {
+    margin-bottom: 18px;
+}
+
+.results-header h2 {
+    margin: 0 0 6px;
+}
+
+.results-header p {
+    margin: 0;
+    color: #697386;
+}
+
+.results-container {
+    display: grid;
+    gap: 18px;
+}
+
+.coverage-category {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e0e3e8;
+    border-radius: 10px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 16px;
+    border-bottom: 1px solid #e0e3e8;
+    background: #f9fafb;
+}
+
+.category-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.category-count {
+    color: #697386;
+    font-size: 0.9rem;
+}
+
+/* Pokémon cards */
+
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+    gap: 5px;
+    padding: 8px;
+}
+
+.pokemon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+    padding: 3px 3px 21px;
+    border-radius: 6px;
+    background: #f8f9fb;
+    text-align: center;
+}
+
+.pokemon-card img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+}
+
+.pokemon-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.pokemon-types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    min-height: 25px;
+    width: 100%;
+}
+
+.pokemon-types img {
+    display: block;
+    width: 85%;
+    height: 85%;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+/* General */
+
+.empty-state {
+    padding: 28px;
+    border: 1px dashed #cbd0d9;
+    border-radius: 8px;
+    color: #697386;
+    text-align: center;
+}
+
+footer {
+    padding: 20px;
+    color: #697386;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+footer a {
+    color: #455a83;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+    .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .page-header {
+        padding: 28px 16px;
+    }
+
+    main {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+    }
+
+    .settings-panel {
+        padding: 16px;
+    }
+
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .summary-grid {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .coverage-summary {
+        padding: 14px;
+    }
+
+    .summary-header {
+        align-items: flex-start;
+    }
+
+    .summary-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .summary-total {
+        font-size: 0.8rem;
+    }
+}
